@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		443F2A0B24942A32003C4CDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A0A24942A32003C4CDF /* AppDelegate.swift */; };
 		443F2A0D24942A32003C4CDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A0C24942A32003C4CDF /* SceneDelegate.swift */; };
-		443F2A0F24942A32003C4CDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A0E24942A32003C4CDF /* ViewController.swift */; };
+		443F2A0F24942A32003C4CDF /* ComingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A0E24942A32003C4CDF /* ComingController.swift */; };
 		443F2A1224942A32003C4CDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443F2A1024942A32003C4CDF /* Main.storyboard */; };
 		443F2A1424942A33003C4CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443F2A1324942A33003C4CDF /* Assets.xcassets */; };
 		443F2A1724942A33003C4CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443F2A1524942A33003C4CDF /* LaunchScreen.storyboard */; };
 		443F2A2224942A34003C4CDF /* Next_flixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A2124942A34003C4CDF /* Next_flixTests.swift */; };
 		443F2A2D24942A34003C4CDF /* Next_flixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A2C24942A34003C4CDF /* Next_flixUITests.swift */; };
+		44D8657A24958FE200A95C79 /* LeavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8657924958FE200A95C79 /* LeavingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		443F2A0724942A32003C4CDF /* Next-flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next-flix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F2A0A24942A32003C4CDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		443F2A0C24942A32003C4CDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		443F2A0E24942A32003C4CDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		443F2A0E24942A32003C4CDF /* ComingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingController.swift; sourceTree = "<group>"; };
 		443F2A1124942A32003C4CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		443F2A1324942A33003C4CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		443F2A1624942A33003C4CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		443F2A2824942A34003C4CDF /* Next-flixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next-flixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F2A2C24942A34003C4CDF /* Next_flixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_flixUITests.swift; sourceTree = "<group>"; };
 		443F2A2E24942A34003C4CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44D8657924958FE200A95C79 /* LeavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				443F2A0A24942A32003C4CDF /* AppDelegate.swift */,
 				443F2A0C24942A32003C4CDF /* SceneDelegate.swift */,
-				443F2A0E24942A32003C4CDF /* ViewController.swift */,
-				443F2A1024942A32003C4CDF /* Main.storyboard */,
+				44D8657B249591B900A95C79 /* Model */,
+				44D8657824958F5600A95C79 /* View */,
+				44D8657724958F4900A95C79 /* Controller */,
 				443F2A1324942A33003C4CDF /* Assets.xcassets */,
 				443F2A1524942A33003C4CDF /* LaunchScreen.storyboard */,
 				443F2A1824942A33003C4CDF /* Info.plist */,
@@ -126,6 +129,30 @@
 				443F2A2E24942A34003C4CDF /* Info.plist */,
 			);
 			path = "Next-flixUITests";
+			sourceTree = "<group>";
+		};
+		44D8657724958F4900A95C79 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				443F2A0E24942A32003C4CDF /* ComingController.swift */,
+				44D8657924958FE200A95C79 /* LeavingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44D8657824958F5600A95C79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				443F2A1024942A32003C4CDF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44D8657B249591B900A95C79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				443F2A0F24942A32003C4CDF /* ViewController.swift in Sources */,
+				44D8657A24958FE200A95C79 /* LeavingController.swift in Sources */,
+				443F2A0F24942A32003C4CDF /* ComingController.swift in Sources */,
 				443F2A0B24942A32003C4CDF /* AppDelegate.swift in Sources */,
 				443F2A0D24942A32003C4CDF /* SceneDelegate.swift in Sources */,
 			);
