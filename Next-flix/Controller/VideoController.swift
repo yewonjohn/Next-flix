@@ -16,6 +16,9 @@ class VideoController: UIViewController{
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var synopsis: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var videoRelease: UILabel!
+    @IBOutlet weak var runtime: UILabel!
     
     
     override func viewDidLoad() {

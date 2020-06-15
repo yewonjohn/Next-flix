@@ -18,8 +18,7 @@ class ComingController: UITableViewController {
 //        videoManager.fetchVideos()
         
         tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "VideoCell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
+
 
     }
     
@@ -52,6 +51,11 @@ class ComingController: UITableViewController {
         performSegue(withIdentifier: "ComingSegue", sender: self)
         
         }
+    
+    //setting cell height
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     //sends appropriate data over through segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "ComingSegue"{

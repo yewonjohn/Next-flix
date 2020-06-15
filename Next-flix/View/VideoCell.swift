@@ -15,6 +15,7 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var videoRelease: UILabel!
     @IBOutlet weak var videoRating: UILabel!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
