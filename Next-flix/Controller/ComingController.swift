@@ -13,14 +13,35 @@ class ComingController: UITableViewController {
     var exampleArr = ["Testing1","Testing2","Testing3"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+//        var videoManager = VideoManager()
+//        videoManager.fetchVideos()
+
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+    //MARK - Tableview DataSource Methods
+    
+    //DEFINES HOW MANY CELLS TO CREATE
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exampleArr.count
+    }
+    
+    //Runs every time a cell is loaded
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //set current cell with "Coming Cell" at the current index
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ComingCell", for: indexPath)
+        //setting fetched cell text
+        cell.textLabel?.text = exampleArr[indexPath.row]
+        //returning updated cell
+        return cell
+        
+    }
+    //MARK - Tableview Delegate Methods
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        //deselects after selecting
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 

@@ -15,6 +15,10 @@
 		443F2A1724942A33003C4CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443F2A1524942A33003C4CDF /* LaunchScreen.storyboard */; };
 		443F2A2224942A34003C4CDF /* Next_flixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A2124942A34003C4CDF /* Next_flixTests.swift */; };
 		443F2A2D24942A34003C4CDF /* Next_flixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2A2C24942A34003C4CDF /* Next_flixUITests.swift */; };
+		447E3D222497DC8000F777C5 /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E3D212497DC8000F777C5 /* VideoData.swift */; };
+		447E3D252497E9BC00F777C5 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E3D232497E9BC00F777C5 /* VideoCell.swift */; };
+		447E3D262497E9BC00F777C5 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447E3D242497E9BC00F777C5 /* VideoCell.xib */; };
+		4496433C2497CF8C007E6587 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496433B2497CF8C007E6587 /* VideoManager.swift */; };
 		44D8657A24958FE200A95C79 /* LeavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8657924958FE200A95C79 /* LeavingController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +54,10 @@
 		443F2A2824942A34003C4CDF /* Next-flixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next-flixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F2A2C24942A34003C4CDF /* Next_flixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_flixUITests.swift; sourceTree = "<group>"; };
 		443F2A2E24942A34003C4CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447E3D212497DC8000F777C5 /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
+		447E3D232497E9BC00F777C5 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		447E3D242497E9BC00F777C5 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		4496433B2497CF8C007E6587 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		44D8657924958FE200A95C79 /* LeavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				443F2A1024942A32003C4CDF /* Main.storyboard */,
+				447E3D232497E9BC00F777C5 /* VideoCell.swift */,
+				447E3D242497E9BC00F777C5 /* VideoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 		44D8657B249591B900A95C79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4496433B2497CF8C007E6587 /* VideoManager.swift */,
+				447E3D212497DC8000F777C5 /* VideoData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				443F2A1724942A33003C4CDF /* LaunchScreen.storyboard in Resources */,
+				447E3D262497E9BC00F777C5 /* VideoCell.xib in Resources */,
 				443F2A1424942A33003C4CDF /* Assets.xcassets in Resources */,
 				443F2A1224942A32003C4CDF /* Main.storyboard in Resources */,
 			);
@@ -287,9 +300,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44D8657A24958FE200A95C79 /* LeavingController.swift in Sources */,
+				447E3D252497E9BC00F777C5 /* VideoCell.swift in Sources */,
 				443F2A0F24942A32003C4CDF /* ComingController.swift in Sources */,
+				4496433C2497CF8C007E6587 /* VideoManager.swift in Sources */,
 				443F2A0B24942A32003C4CDF /* AppDelegate.swift in Sources */,
 				443F2A0D24942A32003C4CDF /* SceneDelegate.swift in Sources */,
+				447E3D222497DC8000F777C5 /* VideoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
