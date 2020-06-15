@@ -16,6 +16,10 @@ class ComingController: UITableViewController {
         
 //        var videoManager = VideoManager()
 //        videoManager.fetchVideos()
+        
+        tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "VideoCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
 
     }
     
@@ -29,9 +33,10 @@ class ComingController: UITableViewController {
     //Runs every time a cell is loaded
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //set current cell with "Coming Cell" at the current index
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ComingCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! VideoCell
         //setting fetched cell text
-        cell.textLabel?.text = exampleArr[indexPath.row]
+        cell.videoTitle.text = exampleArr[indexPath.row]
+        cell.videoType.text = "Movie"
         //returning updated cell
         return cell
         
@@ -42,8 +47,17 @@ class ComingController: UITableViewController {
 
         //deselects after selecting
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        //performs segue
+        performSegue(withIdentifier: "ComingSegue", sender: self)
+        
+        }
+    //sends appropriate data over through segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "ComingSegue"{
+            let destinationVC = segue.destination as! VideoController
+            destinationVC.videoTit = "Moana"
+        }
     }
-
-
 }
 
