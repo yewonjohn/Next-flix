@@ -40,7 +40,6 @@ struct VideoManager {
                 if let safeData = data{
                     if let videoArr = self.parseJSON(safeData){
                         self.delegate?.didUpdateVideo(self, videos: videoArr)
-                        print("delegate function triggered?")
                     }
                 }
             }

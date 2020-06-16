@@ -12,11 +12,6 @@ class VideoController: UIViewController{
     
     var video: VideoModel?
     var vidImg: UIImage?
-    var vidTitle: String?
-    var vidSynopsis: String?
-    var vidRating: String?
-    var vidRelease: String?
-    var vidRuntime: String?
     
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
@@ -27,14 +22,26 @@ class VideoController: UIViewController{
     
     
     override func viewDidLoad() {
-        videoImage.image = vidImg
-        videoTitle?.text = vidTitle
-        synopsis?.text = vidSynopsis
-        rating?.text = vidRating
-        videoRelease?.text = vidRelease
-        runtime?.text = vidRuntime
+        print(video?.title)
+        print(video?.largeimage)
+        
+        //change that ! later I think
+        if let imageURL = URL(string: video!.largeimage){
+            // just not to cause a deadlock in UI!
+            DispatchQueue.global().async {
+                guard let imageData = try? Data(contentsOf: imageURL) else { return }
+                let image = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    self.videoImage.image = image
+                }
+            }
+        }
+        videoTitle?.text = video?.title
+        synopsis?.text = video?.synopsis
+        rating?.text = video?.rating
+        videoRelease?.text = video?.released
+        runtime?.text = video?.runtime
         
         
-        //blah
     }
 }
