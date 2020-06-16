@@ -10,8 +10,13 @@ import UIKit
 
 class VideoController: UIViewController{
     
-    var videoImg: String?
-    var videoTit: String?
+    var video: VideoModel?
+    var vidImg: UIImage?
+    var vidTitle: String?
+    var vidSynopsis: String?
+    var vidRating: String?
+    var vidRelease: String?
+    var vidRuntime: String?
     
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
@@ -22,7 +27,14 @@ class VideoController: UIViewController{
     
     
     override func viewDidLoad() {
-        videoTitle?.text = videoTit
+        videoImage.image = vidImg
+        videoTitle?.text = vidTitle
+        synopsis?.text = vidSynopsis
+        rating?.text = vidRating
+        videoRelease?.text = vidRelease
+        runtime?.text = vidRuntime
+        
+        
         //blah
     }
 }

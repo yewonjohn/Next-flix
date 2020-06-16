@@ -66,37 +66,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MP-4N-tMt">
-                                <rect key="frame" x="20" y="393" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB8-cc-eIR">
-                                <rect key="frame" x="20" y="393" width="1861" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">EXAMPLE OF A SYNOPSYS TEXT FIELD AREA BLAH BLAH BLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blah</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB8-cc-eIR">
+                                <rect key="frame" x="20" y="393" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <string key="text">EXAMPLE OF A SYNOPSYS TEXT FIELD AREA BLAH BLAH BLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blahBLAH blah blah Blah</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0x-NV-nUR">
-                                <rect key="frame" x="20" y="422" width="49" height="21"/>
+                                <rect key="frame" x="20" y="489" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oin-uF-Z61">
-                                <rect key="frame" x="20" y="451" width="60" height="21"/>
+                                <rect key="frame" x="20" y="518" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-sx-L4q">
-                                <rect key="frame" x="20" y="480" width="59" height="21"/>
+                                <rect key="frame" x="20" y="547" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -108,11 +101,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="wjR-lN-9MY"/>
                     <connections>
-                        <outlet property="rating" destination="m0x-NV-nUR" id="n9s-Oi-4ci"/>
-                        <outlet property="release" destination="oin-uF-Z61" id="glU-Jr-1tN"/>
+                        <outlet property="rating" destination="m0x-NV-nUR" id="El4-OM-ZEp"/>
                         <outlet property="runtime" destination="e1f-sx-L4q" id="DTM-ip-2db"/>
                         <outlet property="synopsis" destination="oB8-cc-eIR" id="XTs-UV-cwV"/>
                         <outlet property="videoImage" destination="3bb-sK-Ezu" id="fj1-Z6-Ctx"/>
+                        <outlet property="videoRelease" destination="oin-uF-Z61" id="XMy-ea-hrr"/>
                         <outlet property="videoTitle" destination="Pq4-UL-vTr" id="6d7-iJ-rHY"/>
                     </connections>
                 </viewController>

@@ -19,6 +19,7 @@
 		447E3D252497E9BC00F777C5 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E3D232497E9BC00F777C5 /* VideoCell.swift */; };
 		447E3D262497E9BC00F777C5 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447E3D242497E9BC00F777C5 /* VideoCell.xib */; };
 		447E3D282497FA3B00F777C5 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E3D272497FA3B00F777C5 /* VideoController.swift */; };
+		447E3D2A24983E6100F777C5 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E3D2924983E6100F777C5 /* VideoModel.swift */; };
 		4496433C2497CF8C007E6587 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496433B2497CF8C007E6587 /* VideoManager.swift */; };
 		44D8657A24958FE200A95C79 /* LeavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8657924958FE200A95C79 /* LeavingController.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		447E3D232497E9BC00F777C5 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		447E3D242497E9BC00F777C5 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		447E3D272497FA3B00F777C5 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		447E3D2924983E6100F777C5 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		4496433B2497CF8C007E6587 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		44D8657924958FE200A95C79 /* LeavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 			children = (
 				4496433B2497CF8C007E6587 /* VideoManager.swift */,
 				447E3D212497DC8000F777C5 /* VideoData.swift */,
+				447E3D2924983E6100F777C5 /* VideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				447E3D252497E9BC00F777C5 /* VideoCell.swift in Sources */,
 				443F2A0F24942A32003C4CDF /* ComingController.swift in Sources */,
 				447E3D282497FA3B00F777C5 /* VideoController.swift in Sources */,
+				447E3D2A24983E6100F777C5 /* VideoModel.swift in Sources */,
 				4496433C2497CF8C007E6587 /* VideoManager.swift in Sources */,
 				443F2A0B24942A32003C4CDF /* AppDelegate.swift in Sources */,
 				443F2A0D24942A32003C4CDF /* SceneDelegate.swift in Sources */,
