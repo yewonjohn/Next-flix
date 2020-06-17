@@ -11,7 +11,6 @@ import UIKit
 class VideoController: UIViewController{
     
     var video: VideoModel?
-    var vidImg: UIImage?
     
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
@@ -22,9 +21,6 @@ class VideoController: UIViewController{
     
     
     override func viewDidLoad() {
-        print(video?.title)
-        print(video?.largeimage)
-        
         //change that ! later I think
         if let imageURL = URL(string: video!.largeimage){
             // just not to cause a deadlock in UI!
@@ -41,7 +37,9 @@ class VideoController: UIViewController{
         rating?.text = video?.rating
         videoRelease?.text = video?.released
         runtime?.text = video?.runtime
-        
+ 
+    }
+    func fetchImage(){
         
     }
 }

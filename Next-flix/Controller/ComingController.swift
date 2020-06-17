@@ -10,6 +10,8 @@ import UIKit
 
 class ComingController: UITableViewController {
     
+    //setting vid to pass for segue
+    var vidToPass: VideoModel? = nil
     //setting instance of videoManager
     var videoManager = VideoManager()
     var videoArray: [VideoModel] = []
@@ -17,16 +19,16 @@ class ComingController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //SETTING ARRAY FOR TESTING
-        let vid1 = VideoModel(netflixid: "1234", title: "Bob", image: "http://art-0.nflximg.net/7e210/c95b08aff5e62852a3f9be44c9c8f12f65b7e210.jpg", synopsis: "There once was a man beep boppitty", rating: "7.7", type: "movie", released: "2013", runtime: "1h19m", largeimage: "http://cdn1.nflximg.net/images/9475/10869475.jpg")
-        let vid2 = VideoModel(netflixid: "1235", title: "Bobby", image: "http://art-0.nflximg.net/7e210/c95b08aff5e62852a3f9be44c9c8f12f65b7e210.jpg", synopsis: "There once was a man beep boppitty", rating: "7.7", type: "movie", released: "2013", runtime: "1h19m", largeimage: "http://cdn1.nflximg.net/images/9475/10869475.jpg")
-        let vid3 = VideoModel(netflixid: "1236", title: "Bobby Brown", image: "http://art-0.nflximg.net/7e210/c95b08aff5e62852a3f9be44c9c8f12f65b7e210.jpg", synopsis: "There once was a man beep boppitty", rating: "7.7", type: "movie", released: "2013", runtime: "1h19m", largeimage: "http://cdn1.nflximg.net/images/9475/10869475.jpg")
-        videoArray.append(vid1)
-        videoArray.append(vid2)
-        videoArray.append(vid3)
+//        let vid1 = VideoModel(netflixid: "1234", title: "Bob", image: "http://art-0.nflximg.net/7e210/c95b08aff5e62852a3f9be44c9c8f12f65b7e210.jpg", synopsis: "There once was a man beep boppitty", rating: "7.7", type: "movie", released: "2013", runtime: "1h19m", largeimage: "http://cdn1.nflximg.net/images/9475/10869475.jpg")
+//        let vid2 = VideoModel(netflixid: "1235", title: "Bobby", image: "http://art-0.nflximg.net/7e210/c95b08aff5e62852a3f9be44c9c8f12f65b7e210.jpg", synopsis: "There once was a man beep boppitty", rating: "7.7", type: "movie", released: "2013", runtime: "1h19m", largeimage: "http://cdn1.nflximg.net/images/9475/10869475.jpg")
+//        let vid3 = VideoModel(netflixid: "1236", title: "Bobby Brown", image: "http://art-0.nflximg.net/7e210/c95b08aff5e62852a3f9be44c9c8f12f65b7e210.jpg", synopsis: "There once was a man beep boppitty", rating: "7.7", type: "movie", released: "2013", runtime: "1h19m", largeimage: "http://cdn1.nflximg.net/images/9475/10869475.jpg")
+//        videoArray.append(vid1)
+//        videoArray.append(vid2)
+//        videoArray.append(vid3)
         
         videoManager.delegate = self
         //COMMENTING OUT API CALL FOR TESTING
-//        videoManager.fetchComingVideos()
+        videoManager.fetchComingVideos()
         //setting this VC to videoManager delegate
         tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "VideoCell")
     }
@@ -66,19 +68,29 @@ class ComingController: UITableViewController {
     }
     
     //MARK - Tableview Delegate Methods
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //deselects after selecting
         tableView.deselectRow(at: indexPath, animated: true)
         
         let vid = videoArray[indexPath.row]
-        let destinationVC = VideoController()
-        destinationVC.video = vid
-        
+        vidToPass = vid
         //SEGUE - sends over selected video
         performSegue(withIdentifier: "ComingSegue", sender: self)
     }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "ComingSegue") {
+            let destinationVC = segue.destination as! VideoController
+            destinationVC.video = vidToPass
+            print(vidToPass)
+        }
+    }
+
     
     //setting cell height
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
