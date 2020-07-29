@@ -12,24 +12,23 @@ class LeavingController: UITableViewController {
 
         //setting vid to pass for segue
         var vidToPass: VideoModel? = nil
-        //setting instance of videoManager
-        var videoManager = VideoManager()
+        //setting local videoArray for cells
         var videoArray: [VideoModel] = []
+    
+        //setting instance of videoManager to call
+        var videoManager = VideoManager()
             
         override func viewDidLoad() {
             super.viewDidLoad()
-            //SETTING ARRAY FOR TESTING
-
-            
+            //setting delegate here
             videoManager.delegate = self
             //COMMENTING OUT API CALL FOR TESTING
             videoManager.fetchLeavingVideos()
-            //setting this VC to videoManager delegate
+            //setting Custom Cell XIB to tableView
             tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "VideoCell")
         }
         
         //MARK - Tableview DataSource Methods
-        //DEFINES HOW MANY CELLS TO CREATE
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return videoArray.count
         }
@@ -43,19 +42,9 @@ class LeavingController: UITableViewController {
             cell.videoType.text = videoArray[indexPath.row].type
             cell.videoRelease.text = videoArray[indexPath.row].released
             cell.videoRating.text = videoArray[indexPath.row].rating
-            
-            //----
-            if let imageURL = URL(string: videoArray[indexPath.row].image){
-                // just not to cause a deadlock in UI!
-                DispatchQueue.global().async {
-                    guard let imageData = try? Data(contentsOf: imageURL) else { return }
-                    let image = UIImage(data: imageData)
-                    DispatchQueue.main.async {
-                        cell.videoImage.image = image
-                    }
-                }
-            }
-            
+            //setting cell image here using kingfisher
+            let url = URL(string: videoArray[indexPath.row].image)
+            cell.videoImage.kf.setImage(with: url)
             //returning updated cell
             return cell
         }
@@ -72,8 +61,6 @@ class LeavingController: UITableViewController {
             performSegue(withIdentifier: "LeavingSegue", sender: self)
         }
         
-        
-        
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
             if (segue.identifier == "LeavingSegue") {
@@ -81,7 +68,6 @@ class LeavingController: UITableViewController {
                 destinationVC.video = vidToPass
             }
         }
-
         
         //setting cell height
         override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

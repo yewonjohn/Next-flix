@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class VideoController: UIViewController{
     
@@ -21,19 +22,14 @@ class VideoController: UIViewController{
     
     
     override func viewDidLoad() {
-        //change that ! later I think
-        if let imageURL = URL(string: video!.largeimage){
-            // just not to cause a deadlock in UI!
-            DispatchQueue.global().async {
-                guard let imageData = try? Data(contentsOf: imageURL) else { return }
-                let image = UIImage(data: imageData)
-                DispatchQueue.main.async {
-                    self.videoImage.image = image
-                }
-            }
-        }
+        //setting image with kingfisher
+        let url = URL(string: video!.largeimage)
+        videoImage?.kf.setImage(with: url)
         videoTitle?.text = video?.title
-        synopsis?.text = video?.synopsis
+        synopsis?.attributedText = video?.synopsis.htmlToAttributedString
+//        synopsis?.textColor = #colorLiteral(red: 0.8312904239, green: 0.8314308524, blue: 0.848477304, alpha: 1)
+//        synopsis?.font = UIFont(name:"Helvetica Neue", size: 24.0)
+//        synopsis?.text = video?.synopsis
         rating?.text = video?.rating
         videoRelease?.text = video?.released
         runtime?.text = video?.runtime
@@ -43,3 +39,18 @@ class VideoController: UIViewController{
         
     }
 }
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
+}
+
+

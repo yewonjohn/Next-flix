@@ -40,7 +40,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXy-CF-D0n">
                                 <rect key="frame" x="4" y="74" width="45" height="18"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.96620899439999997" green="0.50788900719999996" blue="0.37674449640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -56,7 +56,7 @@
                             <constraint firstItem="yXy-CF-D0n" firstAttribute="top" secondItem="QVn-eC-q6h" secondAttribute="bottom" id="oLc-wW-z4V"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exampleVidImg" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-sY-9Rj">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-sY-9Rj">
                         <rect key="frame" x="0.0" y="0.0" width="73.5" height="103"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="NO2-sY-9Rj" secondAttribute="height" multiplier="166:233" id="9OC-xC-4WZ"/>
@@ -84,7 +84,4 @@
             <point key="canvasLocation" x="232.60869565217394" y="94.754464285714278"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="exampleVidImg" width="166" height="233"/>
-    </resources>
 </document>

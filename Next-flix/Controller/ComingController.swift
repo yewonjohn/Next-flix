@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ComingController: UITableViewController {
     
@@ -48,51 +49,34 @@ class ComingController: UITableViewController {
         cell.videoType.text = videoArray[indexPath.row].type
         cell.videoRelease.text = videoArray[indexPath.row].released
         cell.videoRating.text = videoArray[indexPath.row].rating
-        
-        //----
-        if let imageURL = URL(string: videoArray[indexPath.row].image){
-            // just not to cause a deadlock in UI!
-            DispatchQueue.global().async {
-                guard let imageData = try? Data(contentsOf: imageURL) else { return }
-                let image = UIImage(data: imageData)
-                DispatchQueue.main.async {
-                    cell.videoImage.image = image
-                }
-            }
-        }
-        //----
-        
+        //setting image using kingfisher
+        let url = URL(string: videoArray[indexPath.row].image)
+        cell.videoImage.kf.setImage(with: url)
         //returning updated cell
         return cell
         
     }
     
     //MARK - Tableview Delegate Methods
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //deselects after selecting
         tableView.deselectRow(at: indexPath, animated: true)
         
+        //SEGUE - sets current video to local var, and triggers segue
         let vid = videoArray[indexPath.row]
         vidToPass = vid
-        //SEGUE - sends over selected video
         performSegue(withIdentifier: "ComingSegue", sender: self)
     }
-    
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if (segue.identifier == "ComingSegue") {
             let destinationVC = segue.destination as! VideoController
             destinationVC.video = vidToPass
-            print(vidToPass)
         }
     }
 
-    
-    //setting cell height
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -100,7 +84,6 @@ class ComingController: UITableViewController {
 
 //MARK - VideoManager Delegate Methods
 extension ComingController: VideoManagerDelegate{
-    
     func didUpdateVideo(_ videoManager: VideoManager, videos: [VideoModel]) {
         videoArray = videos
         DispatchQueue.main.async {
@@ -110,5 +93,4 @@ extension ComingController: VideoManagerDelegate{
     func didFailWithError(error: Error) {
         print(error)
     }
-    
 }
